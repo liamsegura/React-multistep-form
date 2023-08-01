@@ -19,13 +19,14 @@ const FormPageOne: React.FC<FormThreeProps> = ({
     onChange(name, value);
   };
   return (
-    <div>
+    <div className="container">
       <h2>Page Three</h2>
       <input
         type="text"
         name="number"
         value={formData.number}
         onChange={handleInputchange}
+        placeholder="Enter your number"
       />
       <button onClick={onPrevious}>previous</button>
       <button onClick={onNext}>next</button>

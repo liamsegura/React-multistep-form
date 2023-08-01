@@ -5,7 +5,7 @@ interface FormFourProps {
     name: string;
     email: string;
     number: string;
-    address: string;
+    plan: string;
   };
   onNext: () => void;
   onPrevious: () => void;
@@ -31,12 +31,12 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <div>
+      <div className="container">
         <h2>Page Four</h2>
         <input
           type="text"
           name="address"
-          value={formData.address}
+          value={formData.plan}
           onChange={handleInputChange}
           placeholder="Enter your address"
         />

@@ -10,7 +10,7 @@ const Form: React.FC = () => {
     name: "",
     email: "",
     number: "",
-    address: "",
+    plan: "",
   });
 
   const handleNextStep = () => {
@@ -34,7 +34,7 @@ const Form: React.FC = () => {
       name: "",
       email: "",
       number: "",
-      address: "",
+      plan: "",
     });
     setPage(1);
   };
@@ -53,6 +53,7 @@ const Form: React.FC = () => {
           onNext={handleNextStep}
           onPrevious={handlePreviousStep}
           onChange={handleChange}
+          checked={false}
         />
       )}
       {page === 3 && (
