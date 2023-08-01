@@ -15,21 +15,44 @@ const Form: React.FC = () => {
 
   const handleNextStep = () => {
     setPage((prev) => prev + 1);
+    console.log(formData);
   };
   const handlePreviousStep = () => {
     setPage((prev) => prev - 1);
   };
 
+  const handleChange = (name: string, value: string) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    console.log("Form Submitted", formData);
+    setFormData({
+      name: "",
+      email: "",
+      number: "",
+      address: "",
+    });
+    setPage(1);
+  };
   return (
     <div>
       {page === 1 && (
-        <FormPageOne formData={formData} onNext={handleNextStep} />
+        <FormPageOne
+          formData={formData}
+          onNext={handleNextStep}
+          onChange={handleChange}
+        />
       )}
       {page === 2 && (
         <FormPageTwo
           formData={formData}
           onNext={handleNextStep}
           onPrevious={handlePreviousStep}
+          onChange={handleChange}
         />
       )}
       {page === 3 && (
@@ -37,6 +60,7 @@ const Form: React.FC = () => {
           formData={formData}
           onNext={handleNextStep}
           onPrevious={handlePreviousStep}
+          onChange={handleChange}
         />
       )}
       {page === 4 && (
@@ -44,6 +68,8 @@ const Form: React.FC = () => {
           formData={formData}
           onNext={handleNextStep}
           onPrevious={handlePreviousStep}
+          onSubmit={handleSubmit}
+          onChange={handleChange}
         />
       )}
     </div>
