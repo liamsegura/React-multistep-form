@@ -49,6 +49,16 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
     onChange("planType", !checkBox ? "month" : "year");
   };
 
+  const [isFormValid, setIsFormValid] = useState(true);
+  const handleNextStep = () => {
+    if (formData.plan) {
+      setIsFormValid(true);
+      onNext();
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
   return (
     <div className="container">
       <h2>Page Two</h2>
@@ -93,8 +103,9 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
         <input type="checkbox" onChange={handleCheckBox} checked={checkBox} />
         <span className="slider round"></span>
       </label>
+      {!isFormValid && <p>Please fill in all required fields.</p>}
       <button onClick={onPrevious}>previous</button>
-      <button onClick={onNext}>next</button>
+      <button onClick={handleNextStep}>next</button>
     </div>
   );
 };

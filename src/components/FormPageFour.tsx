@@ -11,11 +11,13 @@ interface FormFourProps {
   onPrevious: () => void;
   onSubmit: () => void;
   onChange: (name: string, value: string) => void;
+  onChangePlan: () => void;
 }
 
 const FormPageFour: React.FC<FormFourProps> = ({
   formData,
   onPrevious,
+  onChangePlan,
   onSubmit,
 }) => {
   const handleFormSubmit = (event: React.FormEvent) => {
@@ -61,28 +63,28 @@ const FormPageFour: React.FC<FormFourProps> = ({
   );
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div className="container">
-        <h2>Page Four</h2>
+    <div className="container">
+      <h2>Page Four</h2>
 
-        <p>{planName}</p>
-        <p>Plan Price: ${planPrice}</p>
+      <p>{planName}</p>
+      <p>Plan Price: ${planPrice}</p>
+      <button onClick={onChangePlan}>change</button>
 
-        <p>Selected Add-Ons:</p>
-        <ul>
-          {selectedAddOnNames.map((name, index) => (
-            <li key={index}>
-              {name}: ${addOnPrices[index]}
-            </li>
-          ))}
-        </ul>
+      <p>Selected Add-Ons:</p>
+      <ul>
+        {selectedAddOnNames.map((name, index) => (
+          <li key={index}>
+            {name}: ${addOnPrices[index]}
+          </li>
+        ))}
+      </ul>
 
-        <p>Total Cost: ${totalCost}</p>
-
+      <p>Total Cost: ${totalCost}</p>
+      <form onSubmit={handleFormSubmit}>
         <button onClick={onPrevious}>Previous</button>
         <button type="submit">Submit</button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

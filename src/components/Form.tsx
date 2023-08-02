@@ -31,6 +31,9 @@ const Form: React.FC = () => {
   const handlePreviousStep = () => {
     setPage((prev) => prev - 1);
   };
+  const handleChangePlan = () => {
+    setPage(2);
+  };
 
   const handleChange = (name: string, value: string | number | number[]) => {
     setFormData((prevData) => ({
@@ -86,6 +89,7 @@ const Form: React.FC = () => {
           onPrevious={handlePreviousStep}
           onSubmit={handleSubmit}
           onChange={handleChange}
+          onChangePlan={handleChangePlan}
         />
       )}
     </div>
