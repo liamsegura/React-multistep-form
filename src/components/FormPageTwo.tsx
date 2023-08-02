@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface FormTwoProps {
   formData: {
     planType: string;
     plan: number;
+    addOns: number[];
   };
   onNext: () => void;
   onPrevious: () => void;
 
-  onChange: (name: string, value: string | number) => void;
+  onChange: (name: string, value: string | number | []) => void;
   checked: boolean;
   handleCheckBox: () => void;
   checkBox: boolean;
@@ -58,6 +59,12 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
       setIsFormValid(false);
     }
   };
+  useEffect(() => {
+    // Clear addons when the plan changes
+    if (formData.plan !== 0) {
+      onChange("addOns", []);
+    }
+  }, [formData.plan]);
 
   return (
     <div className="container">
