@@ -31,7 +31,7 @@ const SelectableDiv: React.FC<SelectableDivProps> = ({
     </div>
   );
 };
-const FormPageOne: React.FC<FormTwoProps> = ({
+const FormPageTwo: React.FC<FormTwoProps> = ({
   formData,
   onNext,
   onPrevious,
@@ -41,6 +41,7 @@ const FormPageOne: React.FC<FormTwoProps> = ({
 
   const handleCheckBox = () => {
     setCheckBox((prevState) => !prevState);
+
     console.log(checkBox ? "month" : "year");
   };
 
@@ -102,4 +103,4 @@ const FormPageOne: React.FC<FormTwoProps> = ({
   );
 };
 
-export default FormPageOne;
+export default FormPageTwo;

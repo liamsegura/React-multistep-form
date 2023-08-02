@@ -12,6 +12,7 @@ const Form: React.FC = () => {
     number: "",
     planType: "",
     plan: 0,
+    addOns: [],
   });
 
   const handleNextStep = () => {
@@ -22,7 +23,7 @@ const Form: React.FC = () => {
     setPage((prev) => prev - 1);
   };
 
-  const handleChange = (name: string, value: string | number) => {
+  const handleChange = (name: string, value: string | number | number[]) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -37,6 +38,7 @@ const Form: React.FC = () => {
       number: "",
       planType: "",
       plan: 0,
+      addOns: [],
     });
     setPage(1);
   };
