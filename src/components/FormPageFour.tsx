@@ -72,7 +72,8 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
   return (
     <div className="container">
-      <h2>Page Four</h2>
+      <h2>Finishing up</h2>
+      <p>Double-check everything looks OK before confiming.</p>
 
       <p>{planName}</p>
       <p>Plan Price: ${planPrice}</p>
@@ -89,8 +90,8 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
       <p>Total Cost: ${totalCost}</p>
       <form onSubmit={handleFormSubmit}>
-        <button onClick={onPrevious}>Previous</button>
-        <button type="submit">Submit</button>
+        <button onClick={onPrevious}>Go Back</button>
+        <button type="submit">Confirm</button>
       </form>
     </div>
   );

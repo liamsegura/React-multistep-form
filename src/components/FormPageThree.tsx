@@ -31,7 +31,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
   return (
     <>
       <div className="container">
-        <h2>Page Three</h2>
+        <h2>Pick add-ons</h2>
+        <p>Add-ons help enhance your gaming experience.</p>
         {formData.planType === "month" ? (
           <>
             month
@@ -95,8 +96,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
             </div>
           </>
         )}
-        <button onClick={onPrevious}>previous</button>
-        <button onClick={onNext}>next</button>
+        <button onClick={onPrevious}>Go Back</button>
+        <button onClick={onNext}>Next Step</button>
       </div>
     </>
   );

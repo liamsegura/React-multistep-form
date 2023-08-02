@@ -31,8 +31,8 @@ const FormPageOne: React.FC<FormOneProps> = ({
 
   return (
     <div className="container">
-      <h2>Page One</h2>
-
+      <h2>Personal info</h2>
+      <p>Please provide your name, email, address, and phone number.</p>
       <input
         type="text"
         name="name"
@@ -55,7 +55,7 @@ const FormPageOne: React.FC<FormOneProps> = ({
         placeholder="Enter your number"
       />
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <button onClick={handleNextStep}>Next</button>
+      <button onClick={handleNextStep}>Next Step</button>
     </div>
   );
 };

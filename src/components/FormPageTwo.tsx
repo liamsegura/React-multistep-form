@@ -79,7 +79,8 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
 
   return (
     <div className="container">
-      <h2>Page Two</h2>
+      <h2>Select your plan</h2>
+      <p>You have the option of monthly or yearly billing.</p>
       {!checkBox ? (
         <>
           <SelectableDiv
@@ -135,16 +136,16 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
         </>
       )}
       <div className="flex">
-        <p className={checkBox ? "gray" : ""}>monthly</p>
+        <p className={checkBox ? "text-slate-400" : ""}>monthly</p>
         <label className="switch">
           <input type="checkbox" onChange={handleCheckBox} checked={checkBox} />
           <span className="slider round"></span>
         </label>
-        <p className={!checkBox ? "gray" : ""}>yearly</p>
+        <p className={!checkBox ? "text-slate-400" : ""}>yearly</p>
       </div>
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <button onClick={onPrevious}>previous</button>
-      <button onClick={handleNextStep}>next</button>
+      <button onClick={onPrevious}>Go Back</button>
+      <button onClick={handleNextStep}>Next Step</button>
     </div>
   );
 };
