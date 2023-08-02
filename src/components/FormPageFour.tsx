@@ -57,7 +57,15 @@ const FormPageFour: React.FC<FormFourProps> = ({
   const planName = `Plan ${selectedPlan}`;
   const planPrice = selectedPlanInfo.plans[selectedPlan - 1] || 0;
 
-  const selectedAddOnNames = selectedAddOns.map((addOn) => `Add-On ${addOn}`);
+  const selectedAddOnNames = selectedAddOns.map((addOn) =>
+    addOn === 1
+      ? "Online services"
+      : addOn === 2
+      ? "Larger storage"
+      : addOn === 3
+      ? "Customizable profile"
+      : null
+  );
   const addOnPrices = selectedAddOns.map(
     (addOn) => selectedPlanInfo.addOns[addOn] || 0
   );
