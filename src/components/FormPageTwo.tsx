@@ -87,21 +87,21 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
             onClick={() => handleDivClick(0)}
           >
             <p>Arcade</p>
-            <p>{pricingInfo["month"].plans[0]}</p>
+            <p>${pricingInfo["month"].plans[0]}/mo</p>
           </SelectableDiv>
           <SelectableDiv
             selected={selectedDivs === 1}
             onClick={() => handleDivClick(1)}
           >
             <p>Advanced</p>
-            <p>{pricingInfo["month"].plans[1]}</p>
+            <p>${pricingInfo["month"].plans[1]}/mo</p>
           </SelectableDiv>
           <SelectableDiv
             selected={selectedDivs === 2}
             onClick={() => handleDivClick(2)}
           >
             <p>Pro</p>
-            <p>{pricingInfo["month"].plans[2]}</p>
+            <p>${pricingInfo["month"].plans[2]}/mo</p>
           </SelectableDiv>
         </>
       ) : (
@@ -111,7 +111,8 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
             onClick={() => handleDivClick(0)}
           >
             <p>Arcade</p>
-            <p>{pricingInfo["year"].plans[0]}</p>
+            <p>${pricingInfo["year"].plans[0]}/yr</p>
+            <p>2 months free</p>
           </SelectableDiv>
 
           <SelectableDiv
@@ -119,7 +120,8 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
             onClick={() => handleDivClick(1)}
           >
             <p>Advanced</p>
-            <p>{pricingInfo["year"].plans[1]}</p>
+            <p>${pricingInfo["year"].plans[1]}/yr</p>
+            <p>2 months free</p>
           </SelectableDiv>
 
           <SelectableDiv
@@ -127,7 +129,8 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
             onClick={() => handleDivClick(2)}
           >
             <p>Pro</p>
-            <p>{pricingInfo["year"].plans[2]}</p>
+            <p>${pricingInfo["year"].plans[2]}/yr</p>
+            <p>2 months free</p>
           </SelectableDiv>
         </>
       )}

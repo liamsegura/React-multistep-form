@@ -41,7 +41,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(1)}
             >
-              Option 1
+              <p>Online service</p>
+              <p>Access to multiplayer games</p>
             </div>
             <div
               className={`option ${
@@ -49,7 +50,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(2)}
             >
-              Option 2
+              <p>Larger storage</p>
+              <p>Extra 1TB of cloud save</p>
             </div>
             <div
               className={`option ${
@@ -57,7 +59,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(3)}
             >
-              Option 3
+              <p>Customizable profile</p>
+              <p>Custom theme on your profile</p>
             </div>
           </>
         ) : (
@@ -69,7 +72,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(1)}
             >
-              Option 1
+              <p>Online service</p>
+              <p>Access to multiplayer games</p>
             </div>
             <div
               className={`option ${
@@ -77,7 +81,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(2)}
             >
-              Option 2
+              <p>Larger storage</p>
+              <p>Extra 1TB of cloud save</p>
             </div>
             <div
               className={`option ${
@@ -85,7 +90,8 @@ const FormPageTree: React.FC<FormThreeProps> = ({
               }`}
               onClick={() => handleOptionClick(3)}
             >
-              Option 3
+              <p>Customizable profile</p>
+              <p>Custom theme on your profile</p>
             </div>
           </>
         )}
