@@ -10,6 +10,8 @@ interface FormTwoProps {
 
   onChange: (name: string, value: string | number) => void;
   checked: boolean;
+  handleCheckBox: () => void;
+  checkBox: boolean;
 }
 interface SelectableDivProps {
   label: string;
@@ -36,15 +38,9 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
   onNext,
   onPrevious,
   onChange,
+  handleCheckBox,
+  checkBox,
 }) => {
-  const [checkBox, setCheckBox] = useState(false);
-
-  const handleCheckBox = () => {
-    setCheckBox((prevState) => !prevState);
-
-    console.log(checkBox ? "month" : "year");
-  };
-
   const [selectedDivs, setSelectedDivs] = useState<number | null>(null);
 
   const handleDivClick = (index: number) => {

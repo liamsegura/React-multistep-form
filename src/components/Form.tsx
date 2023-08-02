@@ -6,6 +6,7 @@ import FormPageFour from "./FormPageFour";
 
 const Form: React.FC = () => {
   const [page, setPage] = useState(1);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +15,14 @@ const Form: React.FC = () => {
     plan: 0,
     addOns: [],
   });
+
+  const [checkBox, setCheckBox] = useState(false);
+
+  const handleCheckBox = () => {
+    setCheckBox((prevState) => !prevState);
+
+    console.log(checkBox ? "month" : "year");
+  };
 
   const handleNextStep = () => {
     setPage((prev) => prev + 1);
@@ -57,6 +66,8 @@ const Form: React.FC = () => {
           onNext={handleNextStep}
           onPrevious={handlePreviousStep}
           onChange={handleChange}
+          handleCheckBox={handleCheckBox}
+          checkBox={checkBox}
           checked={false}
         />
       )}

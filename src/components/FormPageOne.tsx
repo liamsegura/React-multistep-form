@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface FormOneProps {
   formData: {
@@ -19,9 +19,20 @@ const FormPageOne: React.FC<FormOneProps> = ({
     onChange(name, value);
   };
 
+  const [isFormValid, setIsFormValid] = useState(true);
+  const handleNextStep = () => {
+    if (formData.name && formData.email && formData.number) {
+      setIsFormValid(true);
+      onNext();
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
   return (
     <div className="container">
       <h2>Page One</h2>
+
       <input
         type="text"
         name="name"
@@ -43,7 +54,8 @@ const FormPageOne: React.FC<FormOneProps> = ({
         onChange={handleInputChange}
         placeholder="Enter your number"
       />
-      <button onClick={onNext}>next</button>
+      {!isFormValid && <p>Please fill in all required fields.</p>}
+      <button onClick={handleNextStep}>Next</button>
     </div>
   );
 };

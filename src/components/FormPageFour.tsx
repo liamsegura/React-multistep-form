@@ -3,6 +3,7 @@ import { PricingInfo } from "./PriceInfo";
 
 interface FormFourProps {
   formData: {
+    plan: number;
     planType: string;
     addOns: number[];
   };
@@ -22,27 +23,24 @@ const FormPageFour: React.FC<FormFourProps> = ({
     onSubmit();
   };
 
+  const pricingInfo = PricingInfo as unknown as {
+    [key: string]: {
+      plans: number[];
+      addOns: { [key: number]: number };
+    };
+  };
   // Calculate the total cost based on the user's selections
   const calculateTotalCost = () => {
-    const pricingInfo = PricingInfo as unknown as {
-      [key: string]: {
-        plan: number;
-        addOns: { [key: number]: number }[];
-      };
-    };
-
     const selectedPlan = pricingInfo[formData.planType];
     if (!selectedPlan) return 0;
 
-    // Access the plan cost and add-ons from selectedPlan
-    const planCost = selectedPlan.plan;
-    const selectedAddOns = formData.addOns || []; // Assuming you have addOns in formData
-    const addOnCosts = selectedAddOns.map((addOn) => {
-      const addOnInfo = selectedPlan.addOns[addOn - 1]; // Subtract 1 to match array index
-      return Object.values(addOnInfo)[0]; // Get the cost value from the addOnInfo object
-    });
+    const planCost = selectedPlan.plans[formData.plan - 1] || 0;
+    const selectedAddOns = formData.addOns || [];
 
-    // Calculate the total cost
+    const addOnCosts = selectedAddOns.map(
+      (addOn) => selectedPlan.addOns[addOn] || 0
+    );
+
     const totalCost =
       planCost + addOnCosts.reduce((total, addOnCost) => total + addOnCost, 0);
     return totalCost;
@@ -50,11 +48,35 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
   const totalCost = calculateTotalCost(); // Calculate the total cost
 
+  const selectedPlanInfo = pricingInfo[formData.planType];
+  const selectedPlan = formData.plan;
+  const selectedAddOns = formData.addOns || [];
+
+  const planName = `Plan ${selectedPlan}`;
+  const planPrice = selectedPlanInfo.plans[selectedPlan - 1] || 0;
+
+  const selectedAddOnNames = selectedAddOns.map((addOn) => `Add-On ${addOn}`);
+  const addOnPrices = selectedAddOns.map(
+    (addOn) => selectedPlanInfo.addOns[addOn] || 0
+  );
+
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="container">
         <h2>Page Four</h2>
-        {/* Display the total cost */}
+
+        <p>{planName}</p>
+        <p>Plan Price: ${planPrice}</p>
+
+        <p>Selected Add-Ons:</p>
+        <ul>
+          {selectedAddOnNames.map((name, index) => (
+            <li key={index}>
+              {name}: ${addOnPrices[index]}
+            </li>
+          ))}
+        </ul>
+
         <p>Total Cost: ${totalCost}</p>
 
         <button onClick={onPrevious}>Previous</button>
