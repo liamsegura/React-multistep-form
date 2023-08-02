@@ -58,7 +58,37 @@ const Form: React.FC = () => {
     setPage(1);
   };
   return (
-    <div>
+    <div className="p-10 bg-slate-300 flex">
+      <div className="flex flex-col w-60">
+        <div className="flex">
+          <span className={page === 1 ? "text-blue-500" : ""}>1</span>
+          <div className="p-4">
+            <p>STEP 1</p>
+            <p>YOUR INFO</p>
+          </div>
+        </div>
+        <div className="flex">
+          <span className={page === 2 ? "text-blue-500" : ""}>2</span>
+          <div className="p-4 ">
+            <p>STEP 2</p>
+            <p>YOUR INFO</p>
+          </div>
+        </div>
+        <div className="flex">
+          <span className={page === 3 ? "text-blue-500" : ""}>3</span>
+          <div className="p-4">
+            <p>STEP 3</p>
+            <p>YOUR INFO</p>
+          </div>
+        </div>
+        <div className="flex">
+          <span className={page === 4 ? "text-blue-500" : ""}>4</span>
+          <div className="p-4">
+            <p>STEP 4</p>
+            <p>YOUR INFO</p>
+          </div>
+        </div>
+      </div>
       {page === 1 && (
         <FormPageOne
           formData={formData}
