@@ -89,10 +89,9 @@ const FormPageTree: React.FC<FormThreeProps> = ({
             </div>
           </>
         )}
+        <button onClick={onPrevious}>previous</button>
+        <button onClick={onNext}>next</button>
       </div>
-
-      <button onClick={onPrevious}>previous</button>
-      <button onClick={onNext}>next</button>
     </>
   );
 };

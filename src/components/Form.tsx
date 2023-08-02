@@ -20,7 +20,10 @@ const Form: React.FC = () => {
 
   const handleCheckBox = () => {
     setCheckBox((prevState) => !prevState);
-
+    setFormData((prev) => ({
+      ...prev,
+      plan: 0,
+    }));
     console.log(checkBox ? "month" : "year");
   };
 
