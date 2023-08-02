@@ -2,12 +2,13 @@ import React, { useState } from "react";
 
 interface FormTwoProps {
   formData: {
-    plan: string;
+    planType: string;
+    plan: number;
   };
   onNext: () => void;
   onPrevious: () => void;
 
-  onChange: (name: string, value: string) => void;
+  onChange: (name: string, value: string | number) => void;
   checked: boolean;
 }
 interface SelectableDivProps {
@@ -40,14 +41,15 @@ const FormPageOne: React.FC<FormTwoProps> = ({
 
   const handleCheckBox = () => {
     setCheckBox((prevState) => !prevState);
-    console.log(checkBox);
+    console.log(checkBox ? "month" : "year");
   };
 
   const [selectedDivs, setSelectedDivs] = useState<number | null>(null);
 
   const handleDivClick = (index: number) => {
     setSelectedDivs(index);
-    onChange("plan", `Div ${index + 1}`);
+    onChange("plan", index + 1);
+    onChange("planType", !checkBox ? "month" : "year");
   };
 
   return (
@@ -75,18 +77,18 @@ const FormPageOne: React.FC<FormTwoProps> = ({
         <>
           <SelectableDiv
             label="Div 4"
-            selected={selectedDivs === 3}
-            onClick={() => handleDivClick(3)}
+            selected={selectedDivs === 0}
+            onClick={() => handleDivClick(0)}
           />
           <SelectableDiv
             label="Div 5"
-            selected={selectedDivs === 4}
-            onClick={() => handleDivClick(4)}
+            selected={selectedDivs === 1}
+            onClick={() => handleDivClick(1)}
           />
           <SelectableDiv
             label="Div 6"
-            selected={selectedDivs === 5}
-            onClick={() => handleDivClick(5)}
+            selected={selectedDivs === 2}
+            onClick={() => handleDivClick(2)}
           />
         </>
       )}

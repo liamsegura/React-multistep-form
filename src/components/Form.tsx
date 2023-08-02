@@ -10,7 +10,8 @@ const Form: React.FC = () => {
     name: "",
     email: "",
     number: "",
-    plan: "",
+    planType: "",
+    plan: 0,
   });
 
   const handleNextStep = () => {
@@ -21,7 +22,7 @@ const Form: React.FC = () => {
     setPage((prev) => prev - 1);
   };
 
-  const handleChange = (name: string, value: string) => {
+  const handleChange = (name: string, value: string | number) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -34,7 +35,8 @@ const Form: React.FC = () => {
       name: "",
       email: "",
       number: "",
-      plan: "",
+      planType: "",
+      plan: 0,
     });
     setPage(1);
   };
