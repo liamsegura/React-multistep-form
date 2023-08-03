@@ -84,7 +84,7 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
   };
 
   return (
-    <div className="container-fluid flex flex-col py-6 px-20 w-full">
+    <div className="container-fluid flex flex-col py-6 px-20">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">
         Select your plan
       </h2>
