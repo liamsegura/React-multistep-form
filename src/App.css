@@ -1,22 +1,10 @@
-.container{
-  display: flex;
-  flex-direction: column;
-}
 
-.flex{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .selected{
   padding: 1rem;
   background-color: red;
 }
 
-.gray{
-  color: rgb(184, 184, 184);
-}
 /* The switch - the box around the slider */
 .switch {
   position: relative;

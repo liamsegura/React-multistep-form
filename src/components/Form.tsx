@@ -58,34 +58,58 @@ const Form: React.FC = () => {
     setPage(1);
   };
   return (
-    <div className="p-10 bg-slate-300 flex">
-      <div className="flex flex-col w-60">
-        <div className="flex">
-          <span className={page === 1 ? "text-blue-500" : ""}>1</span>
-          <div className="p-4">
-            <p>STEP 1</p>
-            <p>YOUR INFO</p>
+    <div className="p-4 bg-white flex text-start">
+      <div className="w-2/4 bg-[url('../assets/images/bg-sidebar-desktop.svg')] bg-cover bg-center py-10 px-8 rounded-lg">
+        <div className="flex justify-start items-center text-white mb-6">
+          <div
+            className={`${
+              page === 1 ? "text-blue-900 bg-slate-100" : ""
+            } mr-2 flex h-10 w-10 font-semibold items-center justify-center rounded-full border-2 border-white`}
+          >
+            <p>1</p>
+          </div>
+          <div className=" ">
+            <p className="text-slate-300">STEP 1</p>
+            <p className="font-semibold">YOUR INFO</p>
           </div>
         </div>
-        <div className="flex">
-          <span className={page === 2 ? "text-blue-500" : ""}>2</span>
-          <div className="p-4 ">
-            <p>STEP 2</p>
-            <p>YOUR INFO</p>
+        <div className="flex text-white mb-6 ">
+          <div
+            className={`${
+              page === 2 ? "text-blue-900 bg-slate-100" : ""
+            } mr-2 flex h-10 w-10 font-semibold items-center justify-center rounded-full border-2 border-white`}
+          >
+            <p>2</p>
+          </div>
+          <div className="">
+            <p className="text-slate-300">STEP 2</p>
+            <p className="font-semibold">SELECT PLAN</p>
           </div>
         </div>
-        <div className="flex">
-          <span className={page === 3 ? "text-blue-500" : ""}>3</span>
-          <div className="p-4">
-            <p>STEP 3</p>
-            <p>YOUR INFO</p>
+        <div className="flex text-white mb-6">
+          <div
+            className={`${
+              page === 3 ? "text-blue-900 bg-slate-100" : ""
+            } mr-2 flex h-10 w-10 font-semibold items-center justify-center rounded-full border-2 border-white`}
+          >
+            <p>3</p>
+          </div>
+          <div className="">
+            <p className="text-slate-300">STEP 3</p>
+            <p className="font-semibold">ADD-ONS</p>
           </div>
         </div>
-        <div className="flex">
-          <span className={page === 4 ? "text-blue-500" : ""}>4</span>
-          <div className="p-4">
-            <p>STEP 4</p>
-            <p>YOUR INFO</p>
+        <div className="flex text-white mb-6">
+          <div
+            className={`${
+              page === 4 ? "text-blue-900 bg-slate-100" : ""
+            } mr-2 flex h-10 w-10 font-semibold items-center justify-center rounded-full border-2 border-white`}
+          >
+            <p>4</p>
+          </div>
+          <div className="">
+            <p className="text-slate-300"> STEP 4</p>
+            <p className="font-semibold">SUMMARY</p>
           </div>
         </div>
       </div>
