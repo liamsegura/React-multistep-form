@@ -73,7 +73,7 @@ const Form: React.FC = () => {
             <p className="font-semibold">YOUR INFO</p>
           </div>
         </div>
-        <div className="flex text-white mb-6 ">
+        <div className="flex justify-start items-center text-white mb-6 ">
           <div
             className={`${
               page === 2 ? "text-blue-900 bg-slate-100" : ""
@@ -86,7 +86,7 @@ const Form: React.FC = () => {
             <p className="font-semibold">SELECT PLAN</p>
           </div>
         </div>
-        <div className="flex text-white mb-6">
+        <div className="flex justify-start items-center text-white mb-6">
           <div
             className={`${
               page === 3 ? "text-blue-900 bg-slate-100" : ""
@@ -99,7 +99,7 @@ const Form: React.FC = () => {
             <p className="font-semibold">ADD-ONS</p>
           </div>
         </div>
-        <div className="flex text-white mb-6">
+        <div className="flex justify-start items-center text-white mb-6">
           <div
             className={`${
               page === 4 ? "text-blue-900 bg-slate-100" : ""
