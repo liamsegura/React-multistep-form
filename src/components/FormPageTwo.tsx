@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { PricingInfo } from "./PriceInfo";
+import arcade from "../assets/images/icon-arcade.svg";
+import advanced from "../assets/images/icon-advanced.svg";
+import pro from "../assets/images/icon-pro.svg";
 
 interface FormTwoProps {
   formData: {
@@ -19,6 +22,7 @@ interface SelectableDivProps {
   selected: boolean;
   onClick: () => void;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 const SelectableDiv: React.FC<SelectableDivProps> = ({
@@ -28,7 +32,9 @@ const SelectableDiv: React.FC<SelectableDivProps> = ({
 }) => {
   return (
     <div
-      className={`selectable-div ${selected ? "selected" : ""}`}
+      className={`flex flex-col items-start justify-between gab-2 h-[10rem] w-[8rem] border-2 rounded-lg px-3 py-4 cursor-pointer hover:bg-gray-50 ${
+        selected ? "border-purple-400 bg-gray-50" : ""
+      }`}
       onClick={onClick}
     >
       {children}
@@ -78,74 +84,144 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
   };
 
   return (
-    <div className="container">
-      <h2>Select your plan</h2>
-      <p>You have the option of monthly or yearly billing.</p>
-      {!checkBox ? (
-        <>
-          <SelectableDiv
-            selected={selectedDivs === 0}
-            onClick={() => handleDivClick(0)}
-          >
-            <p>Arcade</p>
-            <p>${pricingInfo["month"].plans[0]}/mo</p>
-          </SelectableDiv>
-          <SelectableDiv
-            selected={selectedDivs === 1}
-            onClick={() => handleDivClick(1)}
-          >
-            <p>Advanced</p>
-            <p>${pricingInfo["month"].plans[1]}/mo</p>
-          </SelectableDiv>
-          <SelectableDiv
-            selected={selectedDivs === 2}
-            onClick={() => handleDivClick(2)}
-          >
-            <p>Pro</p>
-            <p>${pricingInfo["month"].plans[2]}/mo</p>
-          </SelectableDiv>
-        </>
-      ) : (
-        <>
-          <SelectableDiv
-            selected={selectedDivs === 0}
-            onClick={() => handleDivClick(0)}
-          >
-            <p>Arcade</p>
-            <p>${pricingInfo["year"].plans[0]}/yr</p>
-            <p>2 months free</p>
-          </SelectableDiv>
+    <div className="container-fluid flex flex-col py-6 px-20 w-full">
+      <h2 className="text-blue-800 text-2xl font-bold mb-4">
+        Select your plan
+      </h2>
+      <p className="text-gray-600 text-sm mb-4">
+        You have the option of monthly or yearly billing.
+      </p>
+      <div className="mt-4 flex flex-row justify-between gap-2">
+        {!checkBox ? (
+          <>
+            <SelectableDiv
+              selected={selectedDivs === 0}
+              onClick={() => handleDivClick(0)}
+            >
+              <img src={arcade} alt="arcade" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Arcade</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["month"].plans[0]}/mo
+                </p>
+              </div>
+            </SelectableDiv>
+            <SelectableDiv
+              selected={selectedDivs === 1}
+              onClick={() => handleDivClick(1)}
+            >
+              <img src={advanced} alt="advanced" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Advanced</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["month"].plans[1]}/mo
+                </p>
+              </div>
+            </SelectableDiv>
+            <SelectableDiv
+              selected={selectedDivs === 2}
+              onClick={() => handleDivClick(2)}
+            >
+              <img src={pro} alt="pro" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Pro</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["month"].plans[2]}/mo
+                </p>
+              </div>
+            </SelectableDiv>
+          </>
+        ) : (
+          <>
+            <SelectableDiv
+              selected={selectedDivs === 0}
+              onClick={() => handleDivClick(0)}
+            >
+              <img src={arcade} alt="arcade" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Arcade</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["year"].plans[0]}/yr
+                </p>
+                <p className="font-semibold text-blue-900 text-sm">
+                  2 months free
+                </p>
+              </div>
+            </SelectableDiv>
 
-          <SelectableDiv
-            selected={selectedDivs === 1}
-            onClick={() => handleDivClick(1)}
-          >
-            <p>Advanced</p>
-            <p>${pricingInfo["year"].plans[1]}/yr</p>
-            <p>2 months free</p>
-          </SelectableDiv>
+            <SelectableDiv
+              selected={selectedDivs === 1}
+              onClick={() => handleDivClick(1)}
+            >
+              <img src={advanced} alt="advanced" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Advanced</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["year"].plans[1]}/yr
+                </p>
+                <p className="font-semibold text-blue-900 text-sm">
+                  2 months free
+                </p>
+              </div>
+            </SelectableDiv>
 
-          <SelectableDiv
-            selected={selectedDivs === 2}
-            onClick={() => handleDivClick(2)}
-          >
-            <p>Pro</p>
-            <p>${pricingInfo["year"].plans[2]}/yr</p>
-            <p>2 months free</p>
-          </SelectableDiv>
-        </>
-      )}
-      <div className="flex">
-        <p className={checkBox ? "text-slate-400" : ""}>monthly</p>
-        <label className="switch">
+            <SelectableDiv
+              selected={selectedDivs === 2}
+              onClick={() => handleDivClick(2)}
+            >
+              <img src={pro} alt="pro" className="w-1/3" />
+              <div>
+                <p className="font-semibold text-blue-900">Pro</p>
+                <p className="font-semibold text-gray-400 text-xs">
+                  ${pricingInfo["year"].plans[2]}/yr
+                </p>
+                <p className="font-semibold text-blue-900 text-sm">
+                  2 months free
+                </p>
+              </div>
+            </SelectableDiv>
+          </>
+        )}
+      </div>
+      <div className="flex justify-center items-center py-2 w-full bg-slate-100 rounded-lg mt-4">
+        <p
+          className={
+            checkBox
+              ? "text-slate-400 font-semibold"
+              : "text-blue-900 font-semibold"
+          }
+        >
+          Monthly
+        </p>
+        <label className="switch mx-2 cursor-pointer">
           <input type="checkbox" onChange={handleCheckBox} checked={checkBox} />
           <span className="slider round"></span>
         </label>
-        <p className={!checkBox ? "text-slate-400" : ""}>yearly</p>
+        <p
+          className={
+            !checkBox
+              ? "text-slate-400 font-semibold"
+              : "text-blue-900 font-semibold"
+          }
+        >
+          Yearly
+        </p>
       </div>
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <button onClick={onPrevious}>Go Back</button>
-      <button onClick={handleNextStep}>Next Step</button>
+      <div className="flex justify-between mt-20">
+        <button
+          className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
+          onClick={onPrevious}
+        >
+          Go Back
+        </button>
+        <button
+          className=" bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+          onClick={handleNextStep}
+        >
+          Next Step
+        </button>
+      </div>
     </div>
   );
 };

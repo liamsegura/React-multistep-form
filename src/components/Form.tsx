@@ -59,7 +59,7 @@ const Form: React.FC = () => {
   };
   return (
     <div className="p-4 bg-white flex text-start">
-      <div className="w-2/4 bg-[url('../assets/images/bg-sidebar-desktop.svg')] bg-cover bg-center py-10 px-8 rounded-lg">
+      <div className="w-2/4 bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-center py-10 px-8 rounded-lg">
         <div className="flex justify-start items-center text-white mb-6">
           <div
             className={`${
