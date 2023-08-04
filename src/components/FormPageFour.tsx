@@ -57,7 +57,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
   const planName = `${
     selectedPlan === 1 ? "Arcade" : selectedPlan === 2 ? "Advanced" : "Pro"
-  } (${selectedPlanInfo.planType === "month" ? "Monthly" : "Yearly"})`;
+  }`;
   const planPrice = selectedPlanInfo.plans[selectedPlan - 1] || 0;
 
   const selectedAddOnNames = selectedAddOns.map((addOn) =>
@@ -80,9 +80,12 @@ const FormPageFour: React.FC<FormFourProps> = ({
         Double-check everything looks OK before confiming.
       </p>
 
-      <p className="font-semibold text-blue-900">{planName}</p>
+      <p className="font-semibold text-blue-900">
+        {planName}
+        {formData.planType === "month" ? "(Monthly)" : "(Yearly)"}
+      </p>
       <p className="font-semibold text-gray-400 text-xs">
-        ${planPrice} {selectedPlanInfo.planType === "month" ? "/mo" : "/yr"}
+        ${planPrice} {formData.planType === "month" ? "/mo" : "/yr"}
       </p>
       <button
         className="font-semibold text-gray-400 text-xs"
