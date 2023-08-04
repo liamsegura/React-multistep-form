@@ -76,36 +76,52 @@ const FormPageFour: React.FC<FormFourProps> = ({
   return (
     <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">Finishing up</h2>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-8">
         Double-check everything looks OK before confiming.
       </p>
-
-      <p className="font-semibold text-blue-900">
-        {planName}
-        {formData.planType === "month" ? "(Monthly)" : "(Yearly)"}
-      </p>
-      <p className="font-semibold text-gray-400 text-xs">
-        ${planPrice} {formData.planType === "month" ? "/mo" : "/yr"}
-      </p>
-      <button
-        className="font-semibold text-gray-400 text-xs"
-        onClick={onChangePlan}
-      >
-        change
-      </button>
-
-      <p className="font-semibold text-gray-400 text-xs"> Selected Add-Ons:</p>
-      <ul>
-        {selectedAddOnNames.map((name, index) => (
-          <li className="font-semibold text-gray-400 text-xs" key={index}>
-            {name}: ${addOnPrices[index]}
-          </li>
-        ))}
-      </ul>
-
-      <p className="font-semibold text-gray-400 text-xs">
-        Total Cost: ${totalCost}
-      </p>
+      <div className="flex flex-col mb-4 bg-gray-100 p-4 rounded-md">
+        <div className="flex justify-between items-center pb-4 ">
+          <div>
+            <p className="font-semibold text-blue-900">
+              {planName}
+              {formData.planType === "month" ? "(Monthly)" : "(Yearly)"}
+            </p>
+            <button
+              className="font-semibold text-gray-400 text-xs underline"
+              onClick={onChangePlan}
+            >
+              change
+            </button>
+          </div>
+          <p className="text-blue-800 text-md font-bold mb-4">
+            ${planPrice} {formData.planType === "month" ? "/mo" : "/yr"}
+          </p>
+        </div>
+        <div className={selectedAddOnNames.length > 0 ? "border-t-2 pt-4" : ""}>
+          <ul>
+            {selectedAddOnNames.map((name, index) => (
+              <li
+                className="font-semibold text-gray-400 text-xs flex justify-between items-center mb-4"
+                key={index}
+              >
+                <p> {name}</p>
+                <p className="text-blue-800 text-md ">
+                  +${addOnPrices[index]}
+                  {formData.planType === "month" ? "/mo" : "/yr"}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="flex justify-between items-center mb-4">
+        <p className="font-semibold text-gray-400 text-xs">
+          Total {formData.planType === "month" ? "(Per month)" : "(Per year)"}
+        </p>
+        <p className="font-semibold text-purple-700 text-lg">
+          +${totalCost} {formData.planType === "month" ? "/mo" : "/yr"}
+        </p>
+      </div>
       <form onSubmit={handleFormSubmit}>
         <div className="flex justify-between mt-16">
           <button
