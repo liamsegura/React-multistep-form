@@ -30,7 +30,7 @@ const FormPageOne: React.FC<FormOneProps> = ({
   };
 
   return (
-    <div className="container-fluid flex flex-col py-6 px-20 w-[35rem]">
+    <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">Personal info</h2>
       <p className="text-gray-600 text-sm mb-4">
         Please provide your name, email, address, and phone number.

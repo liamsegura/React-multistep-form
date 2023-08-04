@@ -58,7 +58,7 @@ const Form: React.FC = () => {
     setPage(1);
   };
   return (
-    <div className="p-4 bg-white flex text-start">
+    <div className="p-4 bg-white flex flex-wrap text-start">
       <div className="w-[300px] h-[32rem] bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-center py-10 px-8 rounded-lg">
         <div className="flex justify-start items-center text-white mb-6">
           <div

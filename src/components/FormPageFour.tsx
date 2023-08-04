@@ -27,6 +27,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
 
   const pricingInfo = PricingInfo as unknown as {
     [key: string]: {
+      planType: string;
       plans: number[];
       addOns: { [key: number]: number };
     };
@@ -54,7 +55,9 @@ const FormPageFour: React.FC<FormFourProps> = ({
   const selectedPlan = formData.plan;
   const selectedAddOns = formData.addOns || [];
 
-  const planName = `Plan ${selectedPlan}`;
+  const planName = `${
+    selectedPlan === 1 ? "Arcade" : selectedPlan === 2 ? "Advanced" : "Pro"
+  } (${selectedPlanInfo.planType === "month" ? "Monthly" : "Yearly"})`;
   const planPrice = selectedPlanInfo.plans[selectedPlan - 1] || 0;
 
   const selectedAddOnNames = selectedAddOns.map((addOn) =>
@@ -71,27 +74,50 @@ const FormPageFour: React.FC<FormFourProps> = ({
   );
 
   return (
-    <div className="container">
-      <h2>Finishing up</h2>
-      <p>Double-check everything looks OK before confiming.</p>
+    <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
+      <h2 className="text-blue-800 text-2xl font-bold mb-4">Finishing up</h2>
+      <p className="text-gray-600 text-sm mb-4">
+        Double-check everything looks OK before confiming.
+      </p>
 
-      <p>{planName}</p>
-      <p>Plan Price: ${planPrice}</p>
-      <button onClick={onChangePlan}>change</button>
+      <p className="font-semibold text-blue-900">{planName}</p>
+      <p className="font-semibold text-gray-400 text-xs">
+        ${planPrice} {selectedPlanInfo.planType === "month" ? "/mo" : "/yr"}
+      </p>
+      <button
+        className="font-semibold text-gray-400 text-xs"
+        onClick={onChangePlan}
+      >
+        change
+      </button>
 
-      <p>Selected Add-Ons:</p>
+      <p className="font-semibold text-gray-400 text-xs"> Selected Add-Ons:</p>
       <ul>
         {selectedAddOnNames.map((name, index) => (
-          <li key={index}>
+          <li className="font-semibold text-gray-400 text-xs" key={index}>
             {name}: ${addOnPrices[index]}
           </li>
         ))}
       </ul>
 
-      <p>Total Cost: ${totalCost}</p>
+      <p className="font-semibold text-gray-400 text-xs">
+        Total Cost: ${totalCost}
+      </p>
       <form onSubmit={handleFormSubmit}>
-        <button onClick={onPrevious}>Go Back</button>
-        <button type="submit">Confirm</button>
+        <div className="flex justify-between mt-16">
+          <button
+            className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
+            onClick={onPrevious}
+          >
+            Go Back
+          </button>
+          <button
+            className=" bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+            type="submit"
+          >
+            Confirm
+          </button>
+        </div>
       </form>
     </div>
   );

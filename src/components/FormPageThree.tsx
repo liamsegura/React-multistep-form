@@ -39,7 +39,7 @@ const FormPageTree: React.FC<FormThreeProps> = ({
 
   return (
     <>
-      <div className="container-fluid flex flex-col py-6 px-20 w-[35rem]">
+      <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
         <h2 className="text-blue-800 text-2xl font-bold mb-4">Pick add-ons</h2>
         <p className="text-gray-600 text-sm mb-4">
           Add-ons help enhance your gaming experience.
