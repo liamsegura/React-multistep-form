@@ -3,6 +3,7 @@ import FormPageOne from "./FormPageOne";
 import FormPageTwo from "./FormPageTwo";
 import FormPageThree from "./FormPageThree";
 import FormPageFour from "./FormPageFour";
+import FormPageFive from "./FormPageFive";
 
 const Form: React.FC = () => {
   const [page, setPage] = useState(1);
@@ -55,7 +56,7 @@ const Form: React.FC = () => {
       plan: 0,
       addOns: [],
     });
-    setPage(1);
+    setPage(5);
   };
   return (
     <div className="p-4 bg-white flex flex-wrap text-start">
@@ -149,6 +150,7 @@ const Form: React.FC = () => {
           onChangePlan={handleChangePlan}
         />
       )}
+      {page === 5 && <FormPageFive formData={formData} />}
     </div>
   );
 };

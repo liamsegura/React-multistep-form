@@ -208,15 +208,15 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
         </p>
       </div>
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <div className="flex justify-between mt-[5.125rem]">
+      <div className="absolute bottom-40 flex justify-between">
         <button
-          className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
+          className=" text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
           onClick={onPrevious}
         >
           Go Back
         </button>
         <button
-          className=" bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+          className="ml-[13.75rem] bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
           onClick={handleNextStep}
         >
           Next Step
