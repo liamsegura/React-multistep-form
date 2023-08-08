@@ -60,7 +60,7 @@ const Form: React.FC = () => {
   };
   return (
     <div className="p-0 md:p-4 bg-white flex  flex-wrap text-start">
-      <div className="absolute top-0 left-0 w-full md:static flex flex-row md:flex-col w-full h-[12rem] md:w-[300px] md:h-[32rem] bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-bottom bg-[center_top_22rem] py-10 px-8 round-none md:rounded-lg md:bg-center justify-center md:justify-start ">
+      <div className="absolute top-0 left-0 w-full md:static flex flex-row md:flex-col w-full h-[12rem] md:w-[300px] md:h-[32rem] bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-unset md:bg-bottom bg-[center_top_22rem] py-10 px-8 round-none md:rounded-lg md:bg-center justify-center md:justify-start ">
         <div className="flex justify-start items-center text-white mb-6">
           <div
             className={`${
