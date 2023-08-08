@@ -14,7 +14,7 @@ interface FormFiveProps {
 
 const FormPageFive: React.FC<FormFiveProps> = ({ formData }) => {
   return (
-    <div className="h-[75vh] md:h-auto shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col items-center py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
+    <div className="h-[70vh] md:h-auto shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col items-center py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
       <img
         src={thankyou}
         alt="thankyou"
