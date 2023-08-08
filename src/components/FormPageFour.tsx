@@ -74,7 +74,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
   );
 
   return (
-    <div className=" shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
+    <div className="h-[75vh] md:h-auto shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">Finishing up</h2>
       <p className="text-gray-600 text-sm mb-8">
         Double-check everything looks OK before confiming.
@@ -123,7 +123,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
         </p>
       </div>
       <form onSubmit={handleFormSubmit}>
-        <div className="absolute bottom-4 right-0 left-0 md:relative md:bottom-[-10.3rem] flex justify-between px-4 md:px-0">
+        <div className="absolute bottom-4 md:relative md:bottom-[-10.3rem] flex justify-between md:left-0 md:right-0 right-4 left-4">
           <button
             className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
             onClick={onPrevious}
