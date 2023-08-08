@@ -74,7 +74,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
   );
 
   return (
-    <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
+    <div className=" shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">Finishing up</h2>
       <p className="text-gray-600 text-sm mb-8">
         Double-check everything looks OK before confiming.
@@ -123,7 +123,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
         </p>
       </div>
       <form onSubmit={handleFormSubmit}>
-        <div className="absolute bottom-40 flex justify-between">
+        <div className="absolute bottom-4 md:bottom-40 flex justify-between">
           <button
             className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
             onClick={onPrevious}
@@ -131,7 +131,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
             Go Back
           </button>
           <button
-            className="ml-[13.75rem]  bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+            className="ml-[11rem] md:ml-[13.75rem] bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
             type="submit"
           >
             Confirm

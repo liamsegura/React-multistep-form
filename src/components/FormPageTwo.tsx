@@ -84,7 +84,7 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
   };
 
   return (
-    <div className="container-fluid flex flex-col py-6 px-10 md:px-20">
+    <div className=" shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col py-12 md:py-6 pb-28 md:pb-0 px-6 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">
         Select your plan
       </h2>
@@ -208,7 +208,7 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
         </p>
       </div>
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <div className="absolute bottom-40 flex justify-between">
+      <div className="absolute bottom-4 right-0 left-0 md:right-auto md:left-auto md:bottom-40 flex justify-between px-6">
         <button
           className=" text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
           onClick={onPrevious}
@@ -216,7 +216,7 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
           Go Back
         </button>
         <button
-          className="ml-[13.75rem] bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+          className="bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
           onClick={handleNextStep}
         >
           Next Step
