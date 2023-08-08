@@ -4,7 +4,7 @@ import Form from "./components/Form";
 
 function App() {
   return (
-    <div className="App container-fluid shadow-lg">
+    <div className="container-fluid App shadow-lg">
       <Form />
     </div>
   );

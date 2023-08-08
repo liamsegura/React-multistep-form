@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div className="flex flex-col h-screen justify-center items-center bg-slate-100">
+    <div className="flex flex-col  h-full justify-center items-center bg-slate-100 md:h-screen">
       <App />
     </div>
   </React.StrictMode>

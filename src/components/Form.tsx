@@ -59,8 +59,8 @@ const Form: React.FC = () => {
     setPage(5);
   };
   return (
-    <div className="p-4 bg-white flex flex-wrap text-start">
-      <div className="w-[300px] h-[32rem] bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-center py-10 px-8 rounded-lg">
+    <div className="p-0 md:p-4 bg-white flex  flex-wrap text-start">
+      <div className="absolute top-0 left-0 w-full md:static flex flex-row md:flex-col w-full h-[12rem] md:w-[300px] md:h-[32rem] bg-[url('./assets/images/bg-sidebar-desktop.svg')] bg-cover bg-bottom bg-[center_top_20rem] py-10 px-8 round-none md:rounded-lg md:bg-center justify-center md:justify-start ">
         <div className="flex justify-start items-center text-white mb-6">
           <div
             className={`${
@@ -69,7 +69,7 @@ const Form: React.FC = () => {
           >
             <p>1</p>
           </div>
-          <div className=" ">
+          <div className="hidden md:block">
             <p className="text-slate-300">STEP 1</p>
             <p className="font-semibold">YOUR INFO</p>
           </div>
@@ -82,7 +82,7 @@ const Form: React.FC = () => {
           >
             <p>2</p>
           </div>
-          <div className="">
+          <div className="hidden md:block">
             <p className="text-slate-300">STEP 2</p>
             <p className="font-semibold">SELECT PLAN</p>
           </div>
@@ -95,7 +95,7 @@ const Form: React.FC = () => {
           >
             <p>3</p>
           </div>
-          <div className="">
+          <div className="hidden md:block">
             <p className="text-slate-300">STEP 3</p>
             <p className="font-semibold">ADD-ONS</p>
           </div>
@@ -108,7 +108,7 @@ const Form: React.FC = () => {
           >
             <p>4</p>
           </div>
-          <div className="">
+          <div className="hidden md:block">
             <p className="text-slate-300"> STEP 4</p>
             <p className="font-semibold">SUMMARY</p>
           </div>

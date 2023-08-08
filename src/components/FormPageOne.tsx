@@ -30,7 +30,7 @@ const FormPageOne: React.FC<FormOneProps> = ({
   };
 
   return (
-    <div className="container-fluid flex flex-col py-6 px-10 md:px-20 lg:w-[35rem]">
+    <div className=" shadow-xl md:shadow-none m-4 md:m-0 top-28 rounded-lg right-0 left-0 bg-white absolute md:static container-fluid flex flex-col py-12 md:py-6 pb-28 md:pb-0 px-10 md:px-20 lg:w-[35rem]">
       <h2 className="text-blue-800 text-2xl font-bold mb-4">Personal info</h2>
       <p className="text-gray-600 text-sm mb-4">
         Please provide your name, email, address, and phone number.
@@ -64,7 +64,7 @@ const FormPageOne: React.FC<FormOneProps> = ({
       />
       {!isFormValid && <p>Please fill in all required fields.</p>}
       <button
-        className="absolute bottom-40 bg-blue-900 text-white py-3 px-6 rounded-lg self-end text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+        className="absolute bottom-4 md:bottom-40 bg-blue-900 text-white py-3 px-6 rounded-lg self-end text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
         type="button"
         onClick={handleNextStep}
       >
