@@ -123,7 +123,7 @@ const FormPageFour: React.FC<FormFourProps> = ({
         </p>
       </div>
       <form onSubmit={handleFormSubmit}>
-        <div className="absolute bottom-4 md:bottom-40 flex justify-between">
+        <div className="absolute bottom-4 right-0 left-0 md:relative md:bottom-[-10.3rem] flex justify-between px-4 md:px-0">
           <button
             className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
             onClick={onPrevious}

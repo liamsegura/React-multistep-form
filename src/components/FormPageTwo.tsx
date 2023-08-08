@@ -208,7 +208,7 @@ const FormPageTwo: React.FC<FormTwoProps> = ({
         </p>
       </div>
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <div className="absolute bottom-4 right-0 left-0 md:right-auto md:left-auto md:bottom-40 flex justify-between px-6">
+      <div className="absolute bottom-4 right-0 left-0 md:relative md:bottom-[-6rem] flex justify-between px-6 md:px-0">
         <button
           className=" text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
           onClick={onPrevious}

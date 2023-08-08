@@ -228,7 +228,7 @@ const FormPageTree: React.FC<FormThreeProps> = ({
             </div>
           </div>
         )}
-        <div className="absolute bottom-4 md:bottom-40 flex justify-between">
+        <div className="absolute bottom-4 right-0 left-0 md:relative md:bottom-[-4.9rem] flex justify-between px-3 md:px-0">
           <button
             className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
             onClick={onPrevious}

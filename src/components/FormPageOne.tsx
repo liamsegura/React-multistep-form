@@ -63,13 +63,15 @@ const FormPageOne: React.FC<FormOneProps> = ({
         className="p-2 border-2 border-gray-300 rounded-lg"
       />
       {!isFormValid && <p>Please fill in all required fields.</p>}
-      <button
-        className="absolute bottom-4 md:bottom-40 bg-blue-900 text-white py-3 px-6 rounded-lg self-end text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
-        type="button"
-        onClick={handleNextStep}
-      >
-        Next Step
-      </button>
+      <div className="absolute bottom-4 self-end md:relative md:bottom-[-4.7rem] flex justify-between md:px-0">
+        <button
+          className="bg-blue-900 text-white py-3 px-6 rounded-lg text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+          type="button"
+          onClick={handleNextStep}
+        >
+          Next Step
+        </button>
+      </div>
     </div>
   );
 };
