@@ -124,18 +124,20 @@ const FormPageFour: React.FC<FormFourProps> = ({
       </div>
       <form onSubmit={handleFormSubmit}>
         <div className="absolute bottom-4 left-4 md:relative md:bottom-[-10.3rem] md:left-0 md:right-0 right-4">
-          <button
-            className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
-            onClick={onPrevious}
-          >
-            Go Back
-          </button>
-          <button
-            className="ml-[11rem] md:ml-[13.75rem] bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
-            type="submit"
-          >
-            Confirm
-          </button>
+          <div className="flex justify-between">
+            <button
+              className="text-slate-500  text-center hover: transition-all duration-300 ease-in-out cursor-pointer"
+              onClick={onPrevious}
+            >
+              Go Back
+            </button>
+            <button
+              className="ml-[11rem] md:ml-[13.75rem] bg-blue-900 text-white py-3 px-6 rounded-lg  text-center hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
       </form>
     </div>
